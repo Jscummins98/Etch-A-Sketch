@@ -1,0 +1,47 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(51, 94, 134);
+}
+header{
+    background-color: black;
+    height: 500px;
+    padding: 10px 40px;
+    margin-right: 40px;
+}
+h1{
+    color: white;
+}
+button{
+    background-color: black;
+    color:rgb(51, 94, 134);
+    border: 5px solid rgb(51, 94, 134);
+    padding: 20px;
+    font-size: large;
+}
+.button-container{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border: 10px solid black;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.pixel{
+    width: 6.25%;
+    height: 6.25%;
+    /* border: 1px solid green; */
+    box-sizing: border-box;
+}
+.selected{
+    background-color: black;
+}
