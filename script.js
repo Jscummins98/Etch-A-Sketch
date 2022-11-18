@@ -76,3 +76,30 @@ function getRandomColor(){
     }
     return randomColor;
 }
+
+//***************Below code gives classic button functionality */
+const classicButton = document.querySelector('#classic');
+classicButton.addEventListener("click", classicGrid);
+
+function classicGrid(){
+    let pixelNodeList = container.children;
+    for(pixel of pixelNodeList){
+        pixel.addEventListener('mouseenter', function(e){
+            e.target.style.backgroundColor = "black";
+        });
+    }
+}
+
+// *******************Below Code gives shading button functionality ***/
+const shadingButton = document.querySelector('#shading');
+shadingButton.addEventListener("click", shadePixel);
+
+function shadePixel(){
+    let pixelNodeList = container.children;
+    for(pixel of pixelNodeList){
+        pixel.addEventListener("mouseenter", function(e){
+            
+        });
+    }
+}
+
