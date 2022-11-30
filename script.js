@@ -3,28 +3,28 @@ sizeButton.addEventListener("click", createGrid);
 const container = document.querySelector('.container');
 
 // ***************Below code will give option buttons styling when they are clicked************/
-const optionButtons = document.querySelectorAll('.option');
+//const optionButtons = document.querySelectorAll('.option');
 // function unClick(){
 //     optionButtons.forEach((button) =>{
 //         button.classList.remove('clickedButton');
 //     });
 // }
-optionButtons.forEach((button) => {
-    button.addEventListener('click', () =>{
-        // unClick;
-        console.log('you clicked a button');
-        if(button.classList.contains("classic")){
-            console.log('classic');
-            optionButtons[0].classList.add('clickedButton');
-        }else if(button.classList.contains("random")){
-            console.log('random');
-            optionButtons[1].classList.add('clickedButton');
-        }else if(button.classList.contains("shade")){
-            console.log('shade');
-            optionButtons[2].classList.add('clickedButton');
-        }
-    });
-});
+// optionButtons.forEach((button) => {
+//     button.addEventListener('click', () =>{
+//         // unClick;
+//         console.log('you clicked a button');
+//         if(button.classList.contains("classic")){
+//             console.log('classic');
+//             optionButtons[0].classList.add('clickedButton');
+//         }else if(button.classList.contains("random")){
+//             console.log('random');
+//             optionButtons[1].classList.add('clickedButton');
+//         }else if(button.classList.contains("shade")){
+//             console.log('shade');
+//             optionButtons[2].classList.add('clickedButton');
+//         }
+//     });
+// });
 
 //************Below code creates the grid  */
 function createGrid(){
@@ -90,15 +90,23 @@ function classicGrid(){
     }
 }
 
-// *******************Below Code gives shading button functionality ***/
-const shadingButton = document.querySelector('#shading');
-shadingButton.addEventListener("click", shadePixel);
+// *******************Below Code gives custom button functionality ***/
+const colorPicker = document.querySelector('#color-picker');
+colorPicker.addEventListener('change', setColor);
+let color = colorPicker.value;
 
-function shadePixel(){
+function setColor(){
+    color = this.value;
+}
+
+const customButton = document.querySelector('#custom');
+customButton.addEventListener("click", colorPixel);
+
+function colorPixel(){
     let pixelNodeList = container.children;
     for(pixel of pixelNodeList){
         pixel.addEventListener("mouseenter", function(e){
-            
+            e.target.style.backgroundColor = color;
         });
     }
 }
